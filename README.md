@@ -5,7 +5,7 @@ Tensorflow implementation of our unsupervised domain adaptation cardiac segmenta
 
 
 
-##Requirements
+<h2> Requirements
 - Tensorflow 1.14.0
 - python 3.6
 - CPU or NVIDIA GPU + CUDA CuDNN
