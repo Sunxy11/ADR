@@ -23,3 +23,7 @@ Tensorflow implementation of our unsupervised domain adaptation cardiac segmenta
 
 ## Acknowledgement
 This code is heavily borrowed from [SIFA](https://github.com/cchen-cc/SIFA).
+
+
+## Citation
+If you use this code for your research, please cite our papers.
