@@ -22,6 +22,9 @@ def lsgan_loss_discriminator(prob_feak_b, prob_real_b):
 
     
 def HSIC_lossfunc(x, y, b_s):
+    """
+    Calculate Hilbert-Schmidt Independence Criterion (HSIC) loss.
+    """
     assert x.shape.ndims == y.shape.ndims == 2
     m = b_s
     h = tf.eye(m) - 1/m
