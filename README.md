@@ -18,7 +18,7 @@ Tensorflow implementation of our unsupervised domain adaptation cardiac segmenta
 * Run './main.py' to start the training process
 
 ## Evaluate
-* Our trained models can be downloaded from --.
+* Our trained models can be downloaded from [here](https://pan.baidu.com/s/1rQWs2AkqT-uZbbK5O3hk3w?pwd=9u51).
 * Run './evaluate.py' to start the evaluation.
 
 ## Acknowledgement
