@@ -17,11 +17,14 @@ Tensorflow implementation of our unsupervised domain adaptation cardiac segmenta
 * Put 'tfrecords' training data and 'npz' test data of two domains into corresponding folders under `./data` accordingly.
 * Run './create_datalist.py' to generate the datalists containing the path of each data.
 * Run './convertToNpz.py' to convert the 'nii.gz' file to 'npz' file.
+
 ##Train
+* Run './readCkpt.py' to get the initial model of coarse alignment.
+* Run './main.py' to start the training process
 
-
-##evaluation
-
+##Evaluate
+* Our trained models can be downloaded from --.
+* Run './evaluate.py' to start the evaluation.
 
 ##Acknowledgement
 This code is heavily borrowed from [SIFA](https://github.com/cchen-cc/SIFA)
