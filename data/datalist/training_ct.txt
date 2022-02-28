@@ -1,1 +1,2 @@
+# Example 
 ./data/ct_train_tfs/ct_train_slice1.tfrecords
