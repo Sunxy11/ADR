@@ -23,18 +23,12 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '9'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
-#CHECKPOINT_PATH = '/data/zfzhu/sxy/SIFA/output_select/20220104-221200/sifa-16999' #CT
-CHECKPOINT_PATH = '/data/zfzhu/sxy/SIFA/output_select/20211229-192648/sifa-8699' #MR
+CHECKPOINT_PATH = '' #checkpoint path
 
-'''
-BASE_FID = './data/test_ct' # folder path of test files
-TESTFILE_FID = './data/datalist/test_ct.txt' # path of the .txt file storing the test filenames
-TEST_MODALITY = 'CT'
-'''
 
-BASE_FID = './data/test_mr' # folder path of test files
-TESTFILE_FID = './data/datalist/test_mr.txt' # path of the .txt file storing the test filenames
-TEST_MODALITY = 'MR'
+BASE_FID = '' # folder path of test files
+TESTFILE_FID = '' # path of the .txt file storing the test filenames
+TEST_MODALITY = '' # MR or CT
 
 
 
@@ -66,7 +60,7 @@ class ADR:
         self.checkpoint_pth = CHECKPOINT_PATH
         self.batch_size = BATCH_SIZE
 
-        self._pool_size = int(config['pool_size'])
+      
         self._skip = bool(config['skip'])
         self._num_cls = int(config['num_cls'])
 
@@ -143,6 +137,7 @@ class ADR:
         return np.float32(_vol)
  
     def vectorCosine(self, x, y):
+        """Calculate the cosine similarity between corresponding pixels"""
         tmp1 = np.sum(np.multiply(x,y),axis=3)
         tmp2 = np.sum(np.multiply(x,x),axis=3)
         tmp3 = np.sum(np.multiply(y,y),axis=3)
@@ -186,7 +181,7 @@ class ADR:
                     data_batch = np.zeros([self.batch_size, data_size[0], data_size[1], data_size[2]])#256*256*1
                     data_batch_before = np.zeros([self.batch_size, data_size[0], data_size[1], data_size[2]])#256*256*1
                     data_batch_after = np.zeros([self.batch_size, data_size[0], data_size[1], data_size[2]])#256*256*1
-                    label_batch = np.zeros([self.batch_size, label_size[0], label_size[1]])#256*256*3
+                    label_batch = np.zeros([self.batch_size, label_size[0], label_size[1]])#256*256
                     for idx, jj in enumerate(frame_list[ii * self.batch_size: (ii + 1) * self.batch_size]):
                         
                         if idx==0:
@@ -221,6 +216,7 @@ class ADR:
                     cos1 = np.tile(np.expand_dims(self.vectorCosine(predicter_b, predicter_b_before), 3), (1, 1, 1, 5))
                     cos2 = np.tile(np.expand_dims(self.vectorCosine(predicter_b, predicter_b_after), 3), (1, 1, 1, 5))
                     
+                    #Use information of adjacent slices to calibrate the prediction of the current slice 
                     beta = -1
                     p_b = beta*predicter_b + (1-beta)*(cos1/(cos1+cos2)*predicter_b_before + cos2/(cos1+cos2)*predicter_b_after)
                     compact_pred_b_val = (tf.argmax(p_b, 3)).eval()
