@@ -1,0 +1,22 @@
+ {
+  "source_train_pth": "./data/datalist/training_ct.txt",
+  "target_train_pth": "./data/datalist/training_mr.txt",
+  "source_val_pth": "./data/datalist/val_ct.txt",
+  "target_val_pth": "./data/datalist/val_mr.txt",
+  "output_root_dir": "./output",
+  "pool_size": 50,
+  "_LAMBDA_A": 10,
+  "_LAMBDA_B": 10,
+  "skip": 1,
+  "num_cls": 5,
+  "base_lr":0.0002,
+  "max_step": 20000,
+  "keep_rate_value": 1.0,
+  "is_training_value": 1,
+  "batch_size": 8,
+  "lr_gan_decay": 0,
+  "weight_decay": 0.0001,
+  "to_restore": 1,
+  "checkpoint_dir": "/data/zfzhu/sxy/SIFA/SIFA-model/ct2mr"
+}
+
