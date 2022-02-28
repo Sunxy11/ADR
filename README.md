@@ -14,7 +14,7 @@ Tensorflow implementation of our unsupervised domain adaptation cardiac segmenta
 * Run './convertToNpz.py' to convert the 'nii.gz' file to 'npz' file.
 
 ## Train
-* Run './readCkpt.py' to get the initial model of coarse alignment.
+* Run './readCkpt.py' to get the initial model of coarse alignment in our model.
 * Run './main.py' to start the training process
 
 ## Evaluate
