@@ -1,1 +1,2 @@
-./data/mr_train_tfs/mr_train_slice802.tfrecords
+#example
+./data/mr_train_tfs/mr_train_slice0.tfrecords
