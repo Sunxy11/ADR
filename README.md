@@ -22,4 +22,4 @@ Tensorflow implementation of our unsupervised domain adaptation cardiac segmenta
 * Run './evaluate.py' to start the evaluation.
 
 ## Acknowledgement
-This code is heavily borrowed from [SIFA](https://github.com/cchen-cc/SIFA)
+This code is heavily borrowed from [SIFA](https://github.com/cchen-cc/SIFA).
