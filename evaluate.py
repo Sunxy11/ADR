@@ -19,7 +19,7 @@ from matplotlib import cm
 
 import cv2
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '9'
+os.environ['CUDA_VISIBLE_DEVICES'] = '' #GPU id
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
@@ -28,7 +28,7 @@ CHECKPOINT_PATH = '' #checkpoint path
 
 BASE_FID = '' # folder path of test files
 TESTFILE_FID = '' # path of the .txt file storing the test filenames
-TEST_MODALITY = '' # MR or CT
+TEST_MODALITY = '' # set to 'MR' or 'CT'
 
 
 
@@ -138,6 +138,7 @@ class ADR:
  
     def vectorCosine(self, x, y):
         """Calculate the cosine similarity between corresponding pixels"""
+        
         tmp1 = np.sum(np.multiply(x,y),axis=3)
         tmp2 = np.sum(np.multiply(x,x),axis=3)
         tmp3 = np.sum(np.multiply(y,y),axis=3)
