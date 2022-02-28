@@ -1,0 +1,1 @@
+./data/mr_val_tfs/mr_val_slice928.tfrecords

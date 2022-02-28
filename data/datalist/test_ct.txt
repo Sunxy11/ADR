@@ -1,0 +1,1 @@
+./data/test_ct/ct_1003.npz

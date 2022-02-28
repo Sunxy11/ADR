@@ -1,0 +1,1 @@
+./data/ct_val_tfs/ct_val_slice637.tfrecords
