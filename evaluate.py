@@ -218,7 +218,7 @@ class ADR:
                     cos2 = np.tile(np.expand_dims(self.vectorCosine(predicter_b, predicter_b_after), 3), (1, 1, 1, 5))
                     
                     #Use information of adjacent slices to calibrate the prediction of the current slice 
-                    beta = -1
+                    beta = 
                     p_b = beta*predicter_b + (1-beta)*(cos1/(cos1+cos2)*predicter_b_before + cos2/(cos1+cos2)*predicter_b_after)
                     compact_pred_b_val = (tf.argmax(p_b, 3)).eval()
         
