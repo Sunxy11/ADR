@@ -1,8 +1,8 @@
  {
-  "source_train_pth": "./data/datalist/training_ct.txt",
-  "target_train_pth": "./data/datalist/training_mr.txt",
-  "source_val_pth": "./data/datalist/val_ct.txt",
-  "target_val_pth": "./data/datalist/val_mr.txt",
+  "source_train_pth": "path of txt file",
+  "target_train_pth": " ",
+  "source_val_pth": " ",
+  "target_val_pth": " ",
   "output_root_dir": "./output",
   "skip": 1,
   "num_cls": 5,
