@@ -13,6 +13,6 @@
   "batch_size": 8,
   "weight_decay": 0.0001,
   "to_restore": 1,
-  "checkpoint_dir": "./pretrained-model/ct2mr"
+  "checkpoint_dir": ""# the path of pretrained model
 }
 
