@@ -1,4 +1,4 @@
-## ADR
+## Attention-enhanced Disentangled Representation Learning for Unsupervised Domain Adaptation in Cardiac Segmentation (accepted by MICCAI 2022)
 Tensorflow implementation of our unsupervised domain adaptation cardiac segmentation framework. 
 
 ![image](https://github.com/Sunxy11/ADR/blob/main/picture/Overview.png)
