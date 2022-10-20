@@ -252,7 +252,7 @@ def ContentEncoder(inputen, bs, name='ContentEncoder', skip=False, is_training=T
         
         Attn = tf.reshape(tf.reduce_max(z_inv, axis=3),[bs,32,32,1])
         Attn = tf.image.resize_images(Attn, (256, 256))
-        Attn = (v - tf.reduce_min(Attn)) / (tf.reduce_max(Attn) - tf.reduce_min(Attn))# * 255
+        Attn = (Attn - tf.reduce_min(Attn)) / (tf.reduce_max(Attn) - tf.reduce_min(Attn))# * 255
         Attn = tf.tile(Attn, [1,1,1,5])
         Attn_aux = tf.reshape(tf.reduce_max(z_inv_aux, axis=3),[bs,32,32,1])
         Attn_aux = tf.image.resize_images(Attn_aux, (256, 256))
